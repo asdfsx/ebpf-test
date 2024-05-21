@@ -1,0 +1,132 @@
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393315 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_ARRAY, key_size=4, value_size=4, max_entries=1, map_flags=0, inner_map_fd=0, map_name="", map_ifindex=0, btf_fd=0, btf_key_type_id=0, btf_value_type_id=0, btf_vmlinux_value_type_id=0, map_extra=0}, 72) = 3
+393318 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_ARRAY, key_size=4, value_size=4, max_entries=1, map_flags=0, inner_map_fd=0, map_name="feature_test", map_ifindex=0, btf_fd=0, btf_key_type_id=0, btf_value_type_id=0, btf_vmlinux_value_type_id=0, map_extra=0}, 72) = 3
+393318 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_ARRAY, key_size=4, value_size=4, max_entries=1, map_flags=0, inner_map_fd=0, map_name=".test", map_ifindex=0, btf_fd=0, btf_key_type_id=0, btf_value_type_id=0, btf_vmlinux_value_type_id=0, map_extra=0}, 72) = 3
+393318 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_ARRAY, key_size=4, value_size=10324, max_entries=10000, map_flags=0, inner_map_fd=0, map_name="events_stack", map_ifindex=0, btf_fd=0, btf_key_type_id=0, btf_value_type_id=0, btf_vmlinux_value_type_id=0, map_extra=0}, 72) = 3
+393318 bpf(BPF_MAP_CREATE, {map_type=BPF_MAP_TYPE_PERF_EVENT_ARRAY, key_size=4, value_size=4, max_entries=16, map_flags=0, inner_map_fd=0, map_name="events", map_ifindex=0, btf_fd=0, btf_key_type_id=0, btf_value_type_id=0, btf_vmlinux_value_type_id=0, map_extra=0}, 72) = 4
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393323 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393323 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393323 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393321 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393323 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393326 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393326 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393318 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393326 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393326 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393325 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393322 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393319 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_SOCKET_FILTER, insn_cnt=2, insns=0xc000bfbc40, license="MIT", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS, prog_btf_fd=-1, func_info_rec_size=0, func_info=NULL, func_info_cnt=1, line_info_rec_size=0, line_info=NULL, line_info_cnt=0, attach_btf_id=0, attach_prog_fd=0, fd_array=NULL}, 144) = -1 EBADF (错误的文件描述符)
+393319 bpf(BPF_BTF_LOAD, {btf="\237\353\1\0\30\0\0\0\0\0\0\0\20\0\0\0\20\0\0\0\1\0\0\0\0\0\0\0\0\0\0\1"..., btf_log_buf=NULL, btf_size=41, btf_log_size=0, btf_log_level=0}, 32) = 8
+393319 bpf(BPF_BTF_LOAD, {btf="\237\353\1\0\30\0\0\0\0\0\0\0\30\0\0\0\30\0\0\0\3\0\0\0\1\0\0\0\0\0\0\f"..., btf_log_buf=NULL, btf_size=51, btf_log_size=0, btf_log_level=0}, 32) = 8
+393319 bpf(BPF_BTF_LOAD, {btf="\237\353\1\0\30\0\0\0\0\0\0\0\30\0\0\0\30\0\0\0\3\0\0\0\1\0\0\0\1\0\0\f"..., btf_log_buf=NULL, btf_size=51, btf_log_size=0, btf_log_level=0}, 32) = 8
+393319 bpf(BPF_BTF_LOAD, {btf="\237\353\1\0\30\0\0\0\0\0\0\0\30\0\0\0\30\0\0\0\6\0\0\0\0\0\0\0\1\0\0\23"..., btf_log_buf=NULL, btf_size=54, btf_log_size=0, btf_log_level=0}, 32) = 8
+393319 bpf(BPF_BTF_LOAD, {btf="\237\353\1\0\30\0\0\0\0\0\0\0T\1\0\0T\1\0\0y\3\0\0\375\2\0\0\1\0\0\f"..., btf_log_buf=NULL, btf_size=1253, btf_log_size=0, btf_log_level=0}, 32) = 8
+393319 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_KPROBE, insn_cnt=6, insns=0xc000b97c80, license="GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(0, 0, 0), prog_flags=0, prog_name="", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS, prog_btf_fd=0, func_info_rec_size=0, func_info=NULL, func_info_cnt=0, line_info_rec_size=0, line_info=NULL, line_info_cnt=0, attach_btf_id=0, attach_prog_fd=0, fd_array=NULL}, 144) = 9
+393319 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_KPROBE, insn_cnt=91, insns=0xc000c34000, license="Dual MIT/GPL", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(6, 5, 13), prog_flags=0, prog_name="kprobe_vfs_writ", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS, prog_btf_fd=8, func_info_rec_size=8, func_info=0xc000b9a080, func_info_cnt=1, line_info_rec_size=16, line_info=0xc000c2c000, line_info_cnt=21, attach_btf_id=0, attach_prog_fd=0, fd_array=NULL}, 144) = 9
+393319 bpf(BPF_PROG_LOAD, {prog_type=BPF_PROG_TYPE_KPROBE, insn_cnt=2, insns=0xc000c36240, license="MIT", log_level=0, log_size=0, log_buf=NULL, kern_version=KERNEL_VERSION(6, 5, 13), prog_flags=0, prog_name="probe_bpf_perf_", prog_ifindex=0, expected_attach_type=BPF_CGROUP_INET_INGRESS, prog_btf_fd=0, func_info_rec_size=8, func_info=NULL, func_info_cnt=0, line_info_rec_size=16, line_info=NULL, line_info_cnt=0, attach_btf_id=0, attach_prog_fd=0, fd_array=NULL}, 144) = 10
+393319 bpf(BPF_LINK_CREATE, {link_create={prog_fd=10, target_fd=0, attach_type=BPF_PERF_EVENT, flags=0}}, 64) = -1 EBADF (错误的文件描述符)
+393319 --- SIGURG {si_signo=SIGURG, si_code=SI_TKILL, si_pid=393315, si_uid=0} ---
+393324 bpf(BPF_LINK_CREATE, {link_create={prog_fd=9, target_fd=8, attach_type=BPF_PERF_EVENT, flags=0}}, 64) = 10
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4362c, value=0xc000b43628, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43634, value=0xc000b43630, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4363c, value=0xc000b43638, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43644, value=0xc000b43640, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4364c, value=0xc000b43648, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43654, value=0xc000b43650, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4365c, value=0xc000b43658, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43664, value=0xc000b43660, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4366c, value=0xc000b43668, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43674, value=0xc000b43670, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4367c, value=0xc000b43678, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43684, value=0xc000b43680, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4368c, value=0xc000b43688, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b43694, value=0xc000b43690, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b4369c, value=0xc000b43698, flags=BPF_ANY}, 32) = 0
+393324 bpf(BPF_MAP_UPDATE_ELEM, {map_fd=29, key=0xc000b436a4, value=0xc000b436a0, flags=BPF_ANY}, 32) = 0
+393315 --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+393326 +++ exited with 0 +++
+393325 +++ exited with 0 +++
+393324 +++ exited with 0 +++
+393323 +++ exited with 0 +++
+393322 +++ exited with 0 +++
+393321 +++ exited with 0 +++
+393320 +++ exited with 0 +++
+393319 +++ exited with 0 +++
+393318 +++ exited with 0 +++
+393317 +++ exited with 0 +++
+393316 +++ exited with 0 +++
+393315 +++ exited with 0 +++
