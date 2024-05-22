@@ -1,9 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"encoding/binary"
 	"errors"
+	"fmt"
+	"io"
 	"log"
 	"os"
 	"os/signal"
@@ -37,7 +40,7 @@ func main() {
 	// Open a Kprobe at the entry point of the kernel function and attach the
 	// pre-compiled program. Each time the kernel function enters, the program
 	// will emit an event containing pid and command of the execved task.
-	kp, err := link.Kprobe("vfs_write", objs.KprobeExecve, nil)
+	kp, err := link.Kprobe("vfs_write", objs.KprobeVfsWrite, nil)
 	if err != nil {
 		log.Fatalf("opening kprobe: %s", err)
 	}
@@ -58,6 +61,24 @@ func main() {
 
 		if err := rd.Close(); err != nil {
 			log.Fatalf("closing ringbuf reader: %s", err)
+		}
+	}()
+
+	go func() {
+		f, _ := os.OpenFile("/sys/kernel/debug/tracing/trace_pipe", os.O_RDONLY, os.ModePerm)
+		defer f.Close()
+		reader := bufio.NewReader(f)
+		for {
+			select {
+			case <-stopper:
+				return
+			default:
+				line, _, err := reader.ReadLine()
+				if err == io.EOF {
+					break
+				}
+				fmt.Println(string(line))
+			}
 		}
 	}()
 
@@ -82,6 +103,10 @@ func main() {
 			continue
 		}
 
-		log.Printf("pid: %d\tcomm: %s\n", event.Pid, unix.ByteSliceToString(event.Comm[:]))
+		if event.Pid != uint32(780017) {
+			continue
+		}
+
+		log.Printf("pid: %d\tcomm: %s\tdata: %s\n", event.Pid, unix.ByteSliceToString(event.Comm[:]), unix.ByteSliceToString(event.Data[:]))
 	}
 }

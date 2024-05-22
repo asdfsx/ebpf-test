@@ -63,9 +63,9 @@ int kprobe_vfs_write(struct pt_regs *ctx) {
 	bpf_get_current_comm(&task_info->comm, 80);
 
 	if (count > sizeof(task_info->data)) {
-         bpf_probe_read_user(task_info->data, sizeof(task_info->data), buf);
+         bpf_probe_read_user_str(task_info->data, sizeof(task_info->data), buf);
     } else {
-         bpf_probe_read_user(task_info->data, count, buf);
+         bpf_probe_read_user_str(task_info->data, count, buf);
     }
 
 	bpf_ringbuf_submit(task_info, 0);
