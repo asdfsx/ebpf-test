@@ -1,3 +1,5 @@
+github.com/asdfsx/usdt v0.0.0-20240524072822-e9bf70a3453b h1:uYuEtOjdApi/Pgx5698GVJGGR+sKEuaFb6KmdawUZzI=
+github.com/asdfsx/usdt v0.0.0-20240524072822-e9bf70a3453b/go.mod h1:Szv+Wa6SZvc5i+fbMAjW7kfCS07NiZyucMONHs191Dc=
 github.com/cilium/ebpf v0.15.0 h1:7NxJhNiBT3NG8pZJ3c+yfrVdHY8ScgKD27sScgjLMMk=
 github.com/cilium/ebpf v0.15.0/go.mod h1:DHp1WyrLeiBh19Cf/tfiSMhqheEiK8fXFZ4No0P1Hso=
 github.com/go-quicktest/qt v1.101.0 h1:O1K29Txy5P2OK0dGo59b7b0LR6wKfIhttaAhHUyn7eI=
@@ -8,8 +10,6 @@ github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
 github.com/kr/pretty v0.3.1/go.mod h1:hoEshYVHaxMs3cyo3Yncou5ZscifuDolrwPKZanG3xk=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
 github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
-github.com/mmat11/usdt v0.1.0 h1:VHjis3CttACZRSR7KFDbaharIEKKgR9KafD6Qz5XuVY=
-github.com/mmat11/usdt v0.1.0/go.mod h1:++1d24uohS+XlvgwHfMhTbGBq8ILKbQfmYrs6Lpjey8=
 github.com/rogpeppe/go-internal v1.11.0 h1:cWPaGQEPrBb5/AsnsZesgZZ9yb1OQ+GOISoDNXVBh4M=
 github.com/rogpeppe/go-internal v1.11.0/go.mod h1:ddIwULY96R17DhadqLgMfk9H9tvdUzkipdSkR5nkCZA=
 golang.org/x/exp v0.0.0-20230224173230-c95f2b4c22f2 h1:Jvc7gsqn21cJHCmAWx0LiimpP18LZmUxkT5Mp7EZ1mI=

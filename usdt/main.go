@@ -1,26 +1,33 @@
 package main
 
 import (
-	"bufio"
 	"bytes"
 	"encoding/binary"
 	"errors"
-	"fmt"
-	"io"
+	"flag"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
 
-	"github.com/cilium/ebpf/link"
+	"github.com/cilium/ebpf"
 	"github.com/cilium/ebpf/ringbuf"
 	"github.com/cilium/ebpf/rlimit"
+	"github.com/mmat11/usdt"
 	"golang.org/x/sys/unix"
 )
 
 //go:generate bpf2go -cc clang-17 -target amd64 -type event bpf counter.c -- -I../headers
 
 func main() {
+	var pid uint64
+	flag.Uint64Var(&pid, "pid", 0, "要跟踪的pid")
+
+	flag.Parse()
+
+	var err error
+	// selfPid := os.Getpid()
+
 	// Subscribe to signals for terminating the program.
 	stopper := make(chan os.Signal, 1)
 	signal.Notify(stopper, os.Interrupt, syscall.SIGTERM)
@@ -31,20 +38,29 @@ func main() {
 	}
 
 	// Load pre-compiled programs and maps into the kernel.
+	var spec *ebpf.CollectionSpec
+	if spec, err = loadBpf(); err != nil {
+		log.Fatal(err)
+	}
 	objs := bpfObjects{}
-	if err := loadBpfObjects(&objs, nil); err != nil {
+	err = spec.LoadAndAssign(&objs, nil)
+	if err != nil {
 		log.Fatalf("loading objects: %v", err)
 	}
 	defer objs.Close()
 
-	// Open a Kprobe at the entry point of the kernel function and attach the
-	// pre-compiled program. Each time the kernel function enters, the program
-	// will emit an event containing pid and command of the execved task.
-	kp, err := link.Kprobe("vfs_write", objs.KprobeVfsWrite, nil)
+	// Open Executable on the tracee PID.
+	u, err := usdt.New(objs.UprobePythonFunctionEntry, "python", "function__entry", int(pid))
 	if err != nil {
-		log.Fatalf("opening kprobe: %s", err)
+		log.Fatalf("open usdt: %v", err)
 	}
-	defer kp.Close()
+	defer u.Close()
+
+	// u, err := usdt.New(objs.UprobePythonFunctionEntry, "python", "function__entry", selfPid)
+	// if err != nil {
+	// 	log.Fatalf("open usdt: %v", err)
+	// }
+	// defer u.Close()
 
 	// Open a ringbuf reader from userspace RINGBUF map described in the
 	// eBPF C program.
@@ -61,24 +77,6 @@ func main() {
 
 		if err := rd.Close(); err != nil {
 			log.Fatalf("closing ringbuf reader: %s", err)
-		}
-	}()
-
-	go func() {
-		f, _ := os.OpenFile("/sys/kernel/debug/tracing/trace_pipe", os.O_RDONLY, os.ModePerm)
-		defer f.Close()
-		reader := bufio.NewReader(f)
-		for {
-			select {
-			case <-stopper:
-				return
-			default:
-				line, _, err := reader.ReadLine()
-				if err == io.EOF {
-					break
-				}
-				fmt.Println(string(line))
-			}
 		}
 	}()
 
@@ -103,10 +101,11 @@ func main() {
 			continue
 		}
 
-		if event.Pid != uint32(1122025) {
-			continue
-		}
-
-		log.Printf("pid: %d\tcomm: %s\tdata: %s\n", event.Pid, unix.ByteSliceToString(event.Comm[:]), unix.ByteSliceToString(event.Data[:]))
+		log.Printf("pid: %d\tcomm: %s\tfile: %s\tfunc: %s\tlineno: %d\n",
+			event.Pid, unix.ByteSliceToString(event.Comm[:]),
+			unix.ByteSliceToString(event.Filename[:]),
+			unix.ByteSliceToString(event.FnName[:]),
+			event.Lineno,
+		)
 	}
 }

@@ -11,8 +11,9 @@ char __license[] SEC("license") = "Dual MIT/GPL";
 struct event {
 	u32 pid;
 	u8 comm[80];
-	u8 data[32760];
-	u8 path[8000];
+	u8 filename[101];
+    u8 fn_name[101];
+    __s32 lineno;
 };
 
 struct {
@@ -23,13 +24,13 @@ struct {
 // Force emitting struct event into the ELF.
 const struct event *unused __attribute__((unused));
 
-SEC("kprobe/vfs_open")
-int kprobe_execve(struct pt_regs *ctx) {
+//https://github.com/mmat11/usdt/blob/main/examples/python_builtin/bpf/py_builtin.c
+SEC("uprobe/python/function__entry")
+int uprobe_python_function_entry(struct pt_regs *ctx) {
 	u64 id   = bpf_get_current_pid_tgid();
 	u32 tgid = id >> 32;
-	struct event *task_info;
 
-	struct path *path = (struct path *)PT_REGS_PARM1(ctx);
+	struct event *task_info;
 
 	task_info = bpf_ringbuf_reserve(&events, sizeof(struct event), 0);
 	if (!task_info) {
@@ -38,22 +39,20 @@ int kprobe_execve(struct pt_regs *ctx) {
 
 	task_info->pid = tgid;
 	bpf_get_current_comm(&task_info->comm, 80);
-
+	bpf_probe_read_user_str(task_info->filename, 101, (void *)ctx->r14);
+    bpf_probe_read_user_str(task_info->fn_name, 101, (void *)ctx->r15);
+    task_info->lineno = ctx->ax;
+	
 	bpf_ringbuf_submit(task_info, 0);
 
 	return 0;
 }
 
-SEC("kprobe/vfs_write")
-int kprobe_vfs_write(struct pt_regs *ctx) {
+SEC("uprobe/python/function__return")
+int uprobe_python_function_return(struct pt_regs *ctx) {
 	u64 id   = bpf_get_current_pid_tgid();
 	u32 tgid = id >> 32;
 	struct event *task_info;
-
-	struct file *file = (struct file *)PT_REGS_PARM1(ctx);
-    const char *buf = (const char *)PT_REGS_PARM2(ctx);
-    size_t count = (size_t)PT_REGS_PARM3(ctx);
-    loff_t *pos = (loff_t *)PT_REGS_PARM4(ctx);
 
 	task_info = bpf_ringbuf_reserve(&events, sizeof(struct event), 0);
 	if (!task_info) {
@@ -62,12 +61,9 @@ int kprobe_vfs_write(struct pt_regs *ctx) {
 
 	task_info->pid = tgid;
 	bpf_get_current_comm(&task_info->comm, 80);
-
-	if (count > sizeof(task_info->data)) {
-         bpf_probe_read_user_str(task_info->data, sizeof(task_info->data), buf);
-    } else {
-         bpf_probe_read_user_str(task_info->data, count, buf);
-    }
+	bpf_probe_read_user_str(task_info->filename, 101, (void *)ctx->r14);
+    bpf_probe_read_user_str(task_info->fn_name, 101, (void *)ctx->r15);
+    task_info->lineno = ctx->ax;
 
 	bpf_ringbuf_submit(task_info, 0);
 

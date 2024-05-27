@@ -31,3 +31,32 @@ go build
 perfevent version can be build successfully.  
 When `event.data` is `u8 data[1024]` the program can execute few error output `event ring buffer full, dropped 4 samples`.  
 When `event.data` is `u8 data[10240]` the program stucked.
+
+
+# syscalls
+
+```
+cd syscalls
+go generate
+go build
+./syscalls
+```
+
+use `raw_tracepoint/sys_enter` to watch the syscall
+
+https://www.kernel.org/doc/html/latest/trace/events.html
+
+cat /sys/kernel/debug/tracing/available_events
+
+cat /sys/kernel/tracing/events/sched/sched_wakeup/format
+
+# usdt & uprobe
+
+```
+cd python-example
+python3 getpid.py 
+cd usdt
+go generate
+go build
+./usdt -pid xxxxxx
+```
